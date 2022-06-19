@@ -1,9 +1,13 @@
 import logo from './logo.svg';
 
 import './css/App.css';
-import './css/common/button.css'
+import './css/common/common.css'
 
 import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { LeftMenu } from './component/leftMenu.js'
+
+
 
 function App() {
 
@@ -21,14 +25,20 @@ function App() {
   };
 
   return (
-    <div  className="App">
-      <div> { title } </div>
-      <div> 
-        <div>{ curDate }</div>
-        <div className="button-enable" onClick={ changeDate  }> { enable } </div>
-      </div>
-    </div>
-  );
+      <BrowserRouter>
+        <div  className="App">
+
+          <LeftMenu />
+
+
+            <div></div>
+
+        </div>
+      </BrowserRouter>
+  )
+
+
+      ;
 }
 
 export default App;
