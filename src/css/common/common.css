@@ -126,3 +126,34 @@ nav ul,nav li {
     font-weight: 300;
     src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
+
+.padding10 {
+    padding: 10px 10px 10px 10px;
+}
+
+.padding20 {
+    padding: 20px 20px 20px 20px;
+}
+
+.background-dark {
+    background-color: #212121;
+}
+
+.hide {
+    display: none;
+}
+
+
+.btn-edit, .btn-save {
+    position: absolute;
+    background-color: #e5e5e5;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+}
+

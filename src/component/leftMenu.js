@@ -10,7 +10,7 @@ export const LeftMenu = React.forwardRef((props, ref) => {
         return (
             <>
                 <div className="area"></div>
-                <nav className="main-menu" ref={ ref }>
+                <nav className="main-menu" ref={ ref } style={{ textAlign: 'center'}}>
                     <ul>
                         <li>
                             <a href="/logchoco/inbound">

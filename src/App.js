@@ -19,14 +19,16 @@ function App() {
       return (
           <BrowserRouter>
             <div  className="App">
+                <LeftMenu ref={ mainMenu }/>
 
-              <LeftMenu ref={ mainMenu }/>
+                <div className="padding10" >
                     <Routes>
-
 
                         <Route path="/logChoco/inbound" element={  <LogChocoInbound ref={ mainMenu } /> }></Route>
 
                     </Routes>
+                </div>
+
 
 
             </div>
