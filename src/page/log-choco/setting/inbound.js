@@ -12,11 +12,10 @@ import JSONPretty from "react-json-pretty";
 const getSetting = (changSettingText, changeSetting) => {
 
     axios.get('/setting/log/file').then(res => {
-
-        let data = res.data[0];
-        let text = JSON.stringify(data, null, 4);
-        text = text.replace(/\\"/g, '"')
-        // text = text.replace(/\\/g, "\n")
+console.log('1111111')
+        let data = JSON.parse(res.data[0]);
+        // print json pretty
+        var text = JSON.stringify(data, undefined, 2);
 
         changSettingText(text);
         changeSetting(data);
@@ -33,15 +32,11 @@ const saveSetting = (param) => {
     });
 }
 
-export const LogChocoInbound = React.forwardRef((props, ref) => {
+export const LogChocoInbound = () => {
 
     useEffect(() => {
-        setLeftPadding(ref.current.offsetWidth)
-
         getSetting(changSettingText, changeSetting)
     }, []);
-
-
 
     // value for padding-left
     let [leftPadding, setLeftPadding] = useState(0);
@@ -73,7 +68,7 @@ export const LogChocoInbound = React.forwardRef((props, ref) => {
 
     return (
         <div>
-            <div className="setting" style={{ paddingLeft: leftPadding}}>
+            <div className="setting">
                 <div className={ 'btn-edit ' + editComponent} onClick={ clickEdit }>Edit</div>
                 <div className={ 'btn-save ' + saveComponent } onClick={ clickSave }>Save</div>
 
@@ -83,5 +78,5 @@ export const LogChocoInbound = React.forwardRef((props, ref) => {
 
         </div>
     );
-})
+}
 

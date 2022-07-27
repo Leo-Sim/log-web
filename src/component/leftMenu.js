@@ -1,24 +1,23 @@
 
+import './../css/leftMenu.css'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCookie, faBook } from "@fortawesome/free-solid-svg-icons";
-import React, {useEffect} from 'react';
-import { useRef } from 'react';
+import { faCookie, faBook, faChartColumn } from "@fortawesome/free-solid-svg-icons";
 
-
-export const LeftMenu = React.forwardRef((props, ref) => {
+export const LeftMenu = () => {
 
         return (
             <>
                 <div className="area"></div>
-                <nav className="main-menu" ref={ ref } style={{ textAlign: 'center'}}>
+                <nav className="main-menu" style={{ textAlign: 'center'}}>
                     <ul>
                         <li>
                             <a href="/logchoco/inbound">
 
                                 <FontAwesomeIcon className={"img"} icon={ faCookie } />
                                 <span className="nav-text">
-                                Inbound Log
-                            </span>
+                                    Inbound Log
+                                </span>
                             </a>
                         </li>
                         <li>
@@ -26,8 +25,16 @@ export const LeftMenu = React.forwardRef((props, ref) => {
 
                                 <FontAwesomeIcon className={"img"} icon={ faCookie } />
                                 <span className="nav-text">
-                                Outbound Log
-                            </span>
+                                    Outbound Log
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logChoco/monitor">
+                                <FontAwesomeIcon className={"img"} icon={ faChartColumn } />
+                                <span className="nav-text">
+                                    Monitor
+                                </span>
                             </a>
                         </li>
                         <li className="has-subnav">
@@ -44,4 +51,4 @@ export const LeftMenu = React.forwardRef((props, ref) => {
 
             </>
         );
-});
+};
